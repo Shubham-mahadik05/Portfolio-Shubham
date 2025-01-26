@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubham Mahadik - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        .navbar .title {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .navbar .nav-buttons {
+            display: flex;
+            gap: 10px;
+            margin-right: 10px;
+        }
+        .navbar a {
+            background-color: white;
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+            color: white;
+        }
+        .navbar .search-container {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .navbar input[type="text"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .navbar button {
+            background-color: white;
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .navbar button:hover {
+            background-color: #575757;
+            color: white;
+        }
+        .section {
+            display: none;
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .active {
+            display: block;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        h1 {
+            font-size: 28px;
+            color: #333;
+        }
+        .content-box {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .skill-list, .project-list, .experience-list, .education-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .skill-list li, .project-list li, .experience-list li, .education-list li {
+            margin: 10px 0;
+            padding: 8px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="title">Shubham Mahadik</div>
+        <div class="nav-buttons">
+            <a href="#about" onclick="showSection('about')">About</a>
+            <a href="#projects" onclick="showSection('projects')">Projects</a>
+            <a href="#experience" onclick="showSection('experience')">Experience</a>
+            <a href="#skills" onclick="showSection('skills')">Skills</a>
+            <a href="#education" onclick="showSection('education')">Education</a>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchBox" placeholder="Search...">
+            <button onclick="searchContent()">Search</button>
+        </div>
+    </div>
+
+    <div id="about" class="section active">
+        <h1>About Me</h1>
+        <div class="content-box">
+            <p>Hi! I'm Shubham Mahadik, a passionate software developer with a love for technology and problem-solving. I specialize in web development, with a focus on front-end technologies like HTML, CSS, and JavaScript. I enjoy building intuitive and responsive user interfaces and working on innovative projects that challenge my skills.</p>
+            <p>Feel free to explore my portfolio and get in touch with me for any opportunities or collaborations!</p>
+        </div>
+    </div>
+
+    <div id="projects" class="section">
+        <h1>Projects</h1>
+        <div class="content-box">
+            <ul class="project-list">
+                <li><strong>Project 1:</strong> Personal Portfolio Website - A fully responsive portfolio showcasing my skills and projects.</li>
+                <li><strong>Project 2:</strong> E-commerce Platform - A dynamic online store with features like product management and payment integration.</li>
+                <li><strong>Project 3:</strong> Blog Application - A blog platform built with Node.js and MongoDB, allowing users to create and share posts.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="experience" class="section">
+        <h1>Experience</h1>
+        <div class="content-box">
+            <ul class="experience-list">
+                <li><strong>Software Developer Intern</strong> - XYZ Technologies (Jan 2024 - Jun 2024)
+                    <br>Worked on developing front-end components using React and integrating APIs.</li>
+                <li><strong>Junior Developer</strong> - ABC Solutions (Jul 2023 - Dec 2023)
+                    <br>Assisted in building and maintaining internal tools and optimizing codebase.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="skills" class="section">
+        <h1>Skills</h1>
+        <div class="content-box">
+            <ul class="skill-list">
+                <li>JavaScript (ES6+), HTML, CSS</li>
+                <li>React, Node.js, Express</li>
+                <li>Version Control: Git, GitHub</li>
+                <li>Databases: MongoDB, MySQL</li>
+                <li>UI/UX Design Principles</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="education" class="section">
+        <h1>Education</h1>
+        <div class="content-box">
+            <ul class="education-list">
+                <li><strong>Bachelor of Technology in Computer Science</strong> - ABC University (2020 - 2024)</li>
+                <li><strong>High School</strong> - XYZ School (2018 - 2020)</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>Contact: shubham.mahadik@example.com</p>
+        <p>Phone: +91-123-456-7890</p>
+        <p>&copy; 2025 Shubham Mahadik. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function searchContent() {
+            const query = document.getElementById('searchBox').value.toLowerCase();
+            const sections = document.querySelectorAll('.section');
+
+            let found = false;
+            sections.forEach(section => {
+                const text = section.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    sections.forEach(s => s.classList.remove('active'));
+                    section.classList.add('active');
+                    found = true;
+                }
+            });
+
+            if (!found) {
+                alert('No results found!');
+            }
+        }
+    </script>
+
+</body>
+</html>
